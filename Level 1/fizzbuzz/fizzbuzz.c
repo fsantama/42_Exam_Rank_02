@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fizzbuzz.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/12 13:54:22 by fsantama          #+#    #+#             */
+/*   Updated: 2023/04/12 14:44:58 by fsantama         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 // Función auxiliar para escribir un carácter en la salida estándar
@@ -9,7 +21,7 @@ void	ft_putchar(char c)
 // Función auxiliar para escribir una cadena de caracteres en la salida estándar
 void	ft_putstr(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -19,7 +31,8 @@ void	ft_putstr(char *str)
 	}
 }
 
-// Función auxiliar para convertir un número entero en una cadena de caracteres y escribirlo en la salida estándar
+// Función auxiliar para convertir un número entero en una cadena de caracteres 
+// y escribirlo en la salida estándar
 void	ft_putnbr(int n)
 {
 	if (n > 9)
@@ -31,7 +44,7 @@ void	ft_putnbr(int n)
 		ft_putchar(n + 48); // Se imprime el dígito convertido en carácter
 }
 
-// Función para imprimir "fizz", "buzz" o "fizzbuzz" en lugar del número según corresponda
+// Función para imprimir "fizz", "buzz", "fizzbuzz" o el número según toque
 void	print_fizzbuzz(int i)
 {
 	if (i % 3 == 0 && i % 5 == 0)
@@ -46,15 +59,14 @@ void	print_fizzbuzz(int i)
 
 int	main(void)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (i <= 100)
 	{
-		print_fizzbuzz(i); // Se llama a la función para imprimir el número o el texto correspondiente
-		ft_putchar('\n'); // Se imprime un salto de línea después de cada número o texto
+		print_fizzbuzz(i); // función para imprimir el número o el texto
+		ft_putchar('\n'); // salto de línea después de cada número o texto
 		i++;
 	}
 	return (0);
 }
-
