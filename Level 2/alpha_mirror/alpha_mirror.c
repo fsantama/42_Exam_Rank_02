@@ -6,12 +6,13 @@
 /*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 13:03:52 by fsantama          #+#    #+#             */
-/*   Updated: 2023/04/13 13:18:15 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/04/13 13:24:33 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
+// Función para reflejar alfabéticamente una cadena de caracteres
 void	ft_alpha_mirror(char *str)
 {
 	int	i;
@@ -22,9 +23,9 @@ void	ft_alpha_mirror(char *str)
 	{
 		c = str[i];
 		if (c >= 'a' && c <= 'z')
-			c = 'z' - (c - 'a');
+			c = 'z' - (c - 'a'); // Calcula el carácter restando la distancia
 		else if (c >= 'A' && c <= 'Z')
-			c = 'Z' - (c - 'A');
+			c = 'Z' - (c - 'A'); // CAlcula el carácter restando la distancia
 		write(1, &c, 1);
 		i++;
 	}
