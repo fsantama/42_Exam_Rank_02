@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 13:54:00 by fsantama          #+#    #+#             */
-/*   Updated: 2023/04/12 14:37:53 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/04/18 16:49:13 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	ft_print_first_word(const char *str)
 		write(1, &str[i], 1);
 		i++;
 	}
-	write(1, "\n", 1);
 }
 
 int	main(int argc, char **argv)
@@ -37,19 +36,7 @@ int	main(int argc, char **argv)
 
 	i = 0;
 	if (argc == 2)
-	{
 		ft_print_first_word(argv[1]);
-	}
-	else
-	{
-		write(1, "Uso: ", 5);
-		// Escribir el nombre del programa en la salida estándar
-		while (argv[0][i] != '\0')
-		{
-			write(1, &argv[0][i], 1);
-			i++;
-		}
-		write(1, " <cadena>\n", 11);
-	}
+	write(1, "\n", 1);
 	return (0);
 }
