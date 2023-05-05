@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 16:30:16 by fsantama          #+#    #+#             */
-/*   Updated: 2023/04/12 17:18:34 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/05/05 17:36:05 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 // Función para repetir un carácter n veces en la salida estándar
 void	ft_repeat_char(char c, int n)
 {
+	if (n == 0)
+		write (1, &c, 1);
 	while (n > 0)
 	{
 		write(1, &c, 1);
@@ -42,6 +44,7 @@ int	main(int argc, char **argv)
 				n = str[i] - 'A' + 1;
 			ft_repeat_char(str[i], n);
 			i++;
+			n = 0;
 		}
 	}
 	write(1, "\n", 1);
