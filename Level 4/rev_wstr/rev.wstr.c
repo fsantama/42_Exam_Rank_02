@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 13:13:40 by fsantama          #+#    #+#             */
-/*   Updated: 2023/05/08 18:02:10 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/05/08 18:43:00 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,7 @@ void	rev_wstr(char **str)
 		if (i >= 0)
 			ft_putstr(" ");
 	}
+	ft_free_tab(ft_split(*str));
 }
 // Función principal.
 int main(int argc, char **argv)
@@ -140,7 +141,7 @@ int main(int argc, char **argv)
     if (argc == 2)
 	{
         rev_wstr(ft_split(argv[1]));
-		ft_free_tab(ft_split(argv[1]));
+//		ft_free_tab(ft_split(argv[1]));
 	}
     write(1, "\n", 1);
     return (0);
