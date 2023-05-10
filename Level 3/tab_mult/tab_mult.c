@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 16:27:39 by fsantama          #+#    #+#             */
-/*   Updated: 2023/05/10 14:03:37 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/05/10 14:06:50 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	ft_putchar(char c)
 	write (1, &c, 1);
 }
 
-//Due to the subject, it will always be a positive number, we need a reduced
-//version of ft_putnbr
 void	ft_putnbr(int n)
 {
 	if (n >= 10)
@@ -26,8 +24,6 @@ void	ft_putnbr(int n)
 	ft_putchar((n % 10) + '0');
 }
 
-//Due to the subject, it will always be a positive number, we need a reduced
-//version of ft_atoi
 int	ft_atoi(char *str)
 {
 	int	i;
@@ -48,7 +44,6 @@ int	ft_atoi(char *str)
 	return (n);
 }
 
-// In this function we print the entire structure of the table
 void	tab_mult(int n)
 {
 	int	i;
