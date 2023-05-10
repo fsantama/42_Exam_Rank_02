@@ -6,20 +6,28 @@
 /*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 16:27:39 by fsantama          #+#    #+#             */
-/*   Updated: 2023/05/05 16:51:55 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/05/10 13:59:04 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putnbr(int nb)
+void	ft_putchar(char c)
 {
-	if (nb >= 10)
-		ft_putnbr(nb / 10);
-	nb = (nb % 10) + '0';
-	write(1, &nb, 1);
+	write (1, &c, 1);
 }
 
+//Debido al enuncuado, siempre será un nº positivo, necesitamos una versión
+//reducida de ft_putnbr
+void	ft_putnbr(int n)
+{
+	if (n >= 10)
+		ft_putnbr(n / 10);
+	ft_putchar((n % 10) + '0');
+}
+
+// Debido al enunciado, siempre será un nº positivo, necesitamos una version
+// reducida de ft_atoi
 int	ft_atoi(char *str)
 {
 	int	i;
@@ -30,14 +38,17 @@ int	ft_atoi(char *str)
 	while (str[i])
 	{
 		if (str[i] >= '0' && str[i] <= '9')
+		{
 			n = n * 10 + (str[i] - '0');
+			i++;
+		}
 		else
 			return (0);
-		i++;
 	}
 	return (n);
 }
 
+// En esta función imprimimos toda la estructura de la tabla
 void	tab_mult(int n)
 {
 	int	i;
@@ -59,6 +70,7 @@ int	main(int argc, char **argv)
 {
 	if (argc == 2)
 		tab_mult(ft_atoi(argv[1]));
-	write(1, "\n", 1);
+	else
+		write(1, "\n", 1);
 	return (0);
 }
