@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 21:53:29 by fsantama          #+#    #+#             */
-/*   Updated: 2023/05/10 12:12:36 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/05/10 12:49:45 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	search_and_replace(char *str, char *s1, char *s2)
 	int	i;
 
 	i = 0;
-	// Verificar si los caracteres de búsqueda y reemplazo son válidos
+	// Check if search and replace characters are valid
 	if ((((s1[i] >= 'a' && s1[i] <= 'z')
 				|| (s1[i] >= 'A' && s1[i] <= 'Z'))
 			&& (s1[i + 1] == 0)
@@ -30,15 +30,15 @@ void	search_and_replace(char *str, char *s1, char *s2)
 				|| (s2[i] >= 'A' && s2[i] <= 'Z'))
 			&& (s2[i + 1] == 0)))
 	{
-		// Recorrer la cadena de entrada
+		// Loop through the input string
 		while (str[i])
 		{
-			// Realizar el reemplazo si el carácter es igual al de búsqueda
+			// Perform replacement if character equals search character
 			if (str[i] == s1[0])
 				str[i] = s2[0];
-			// Escribir el carácter actual en la salida estándar
+			// Write the current character to standard output
 			ft_putchar(str[i]);
-				// Avanzar al siguiente carácter de la cadena
+				// Advance to the next character in the string
 				i++;
 		}
 	}
