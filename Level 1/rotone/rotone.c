@@ -6,59 +6,46 @@
 /*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:56:43 by fsantama          #+#    #+#             */
-/*   Updated: 2023/04/12 19:09:07 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/05/17 14:17:45 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-// Función para verificar si un carácter es alfabético
-int	ft_is_alpha(char c)
+void	ft_putchar(char c)
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+	write(1, &c, 1);
 }
 
-// Función para aplicar rotación a una letra en orden alfabético
-char	ft_rotone(char c)
+// Function to apply rotation to a letter in alphabetical order
+void	rotone(char *str)
 {
-	if (c >= 'a' && c <= 'z')
-	{
-		c = 'a' + ((c - 'a' + 1) % 26);
-		// se suma 1 para avanzar a la siguiente letra en orden alfabético
-	}
-	else if (c >= 'A' && c <= 'Z')
-	{
-		c = 'A' + ((c - 'A' + 1) % 26);
-		// se suma 1 para avanzar a la siguiente letra en orden alfabético
-	}
-	return (c);
-}
-
-// Función principal
-int	main(int argc, char **argv)
-{
-	char	*str;
-	char	c;
 	int	i;
 
-	if (argc == 2)
+	i = 0;
+	while (str[i])
 	{
-		str = argv[1];
-		i = 0;
-		while (str[i] != '\0')
-		{
-			if (ft_is_alpha(str[i]))
-			{
-				c = ft_rotone(str[i]);
-				write(1, &c, 1);
-			}
-			else
-			{
-				write(1, &str[i], 1);
-			}
-			i++;
+		if (str[i] >= 'a' && str[i] <= 'z')
+		{	
+			// Add 1 to advance to the next letter in alphabetical order
+			str[i] = 'a' + ((str[i] - 'a' + 1) % 26);
+			ft_putchar(str[i]);
 		}
+		else if (str[i] >= 'A' && str[i] <= 'Z')
+		{
+			str[i] = 'A' + ((str[i] - 'A' + 1) % 26);
+			ft_putchar(str[i]);
+		}
+		else
+			ft_putchar(str[i]);
+		i++;
 	}
+}
+
+int	main(int argc, char **argv)
+{
+	if (argc == 2)
+		rotone(argv[1]);
 	write(1, "\n", 1);
 	return (0);
 }
