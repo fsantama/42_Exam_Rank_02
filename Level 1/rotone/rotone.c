@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:56:43 by fsantama          #+#    #+#             */
-/*   Updated: 2023/05/17 14:17:45 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/05/17 14:58:25 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-// Function to apply rotation to a letter in alphabetical order
 void	rotone(char *str)
 {
 	int	i;
@@ -27,7 +26,6 @@ void	rotone(char *str)
 	{
 		if (str[i] >= 'a' && str[i] <= 'z')
 		{	
-			// Add 1 to advance to the next letter in alphabetical order
 			str[i] = 'a' + ((str[i] - 'a' + 1) % 26);
 			ft_putchar(str[i]);
 		}
