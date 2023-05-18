@@ -6,13 +6,12 @@
 /*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 17:25:43 by fsantama          #+#    #+#             */
-/*   Updated: 2023/05/18 16:18:32 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/05/18 16:21:02 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-// Function to get the length of a string
 int	ft_strlen(char *str)
 {
 	int	len;
@@ -23,7 +22,6 @@ int	ft_strlen(char *str)
 	return (len);
 }
 
-// Function to print backwards a string of characters
 void	ft_rev_print(char *str)
 {
 	int	len;
@@ -31,7 +29,7 @@ void	ft_rev_print(char *str)
 	len = ft_strlen(str);
 	while (len > 0)
 	{
-		len--; // We decrement before to skip the NULL
+		len--;
 		write(1, &str[len], 1);
 	}
 }
