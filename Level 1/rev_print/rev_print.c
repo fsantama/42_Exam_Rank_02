@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 17:25:43 by fsantama          #+#    #+#             */
-/*   Updated: 2023/04/12 17:33:16 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/05/18 16:14:24 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,22 +31,15 @@ void	ft_rev_print(char *str)
 	len = ft_strlen(str);
 	while (len > 0)
 	{
-		len--;
+		len--; // Disminuimos antes para saltar el NULL
 		write(1, &str[len], 1);
 	}
-	write(1, "\n", 1);
 }
 
-// Función principal
 int	main(int argc, char **argv)
 {
 	if (argc == 2)
-	{
 		ft_rev_print(argv[1]);
-	}
-	else
-	{
-		write(1, "\n", 1);
-	}
+	write(1, "\n", 1);
 	return (0);
 }
